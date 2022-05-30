@@ -11,12 +11,13 @@ r : Risk free rate
 */
 
 double binomialPricing(double S, double Su, double Sd, double E, double r, double t, double T){
-    double delta = (max(Su-E,0.0)-max(Sd-E,0.0))/(Su-Sd);
+    double delta = (max(Su-E,0.0)-max(Sd-E,0.0))/(Su-Sd); 
     double P = (max(Sd-E,0.0)-delta*Sd)*exp(-r*(T-t))+delta*S;
     return P;
 }
 
 int main(){
+    //Exemple used in Paul Wilmott introduces Quantitative Finance
     cout<<binomialPricing(100,101,99,100,0.1,0,1);
     return 0;
 }
